@@ -3,11 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://rakeshgautam.com/categories/</loc>
+    <loc>http://rakeshgautam.com/posts/argparse-for-python-cli/</loc>
+    <lastmod>2019-09-24T23:15:11+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rakeshgautam.com/posts/</loc>
+    <lastmod>2019-09-24T23:15:11+05:30</lastmod>
   </url>
   
   <url>
     <loc>http://rakeshgautam.com/</loc>
+    <lastmod>2019-09-24T23:15:11+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rakeshgautam.com/categories/</loc>
   </url>
   
   <url>

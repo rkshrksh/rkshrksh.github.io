@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Hugo 0.58.3" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Rakesh Gautam">
+  <meta property="og:url" content="http://rakeshgautam.com/posts/argparse-for-python-cli/">
+
+  <title>Argparse for Python CLI - Rakesh&#39;s Blog</title>
+  <meta property="og:title" content="Argparse for Python CLI - Rakesh&#39;s Blog">
+  <meta property="og:type" content="article">
+  <meta name="description" content="">
+
+  <link rel="shortcut icon" href="/img/favicon.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
+  <link rel="stylesheet" href="/css/highlight.css">
+  <link rel="stylesheet" href="/css/rksha.css">
+  <link rel="stylesheet" href="/css/fontello.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Rakesh&#39;s Blog">
+
+</head>
+
+<body>
+  <div class="container">
+    <nav class="site-nav">
+      <a href="http://rakeshgautam.com/">Home</a>
+    </nav>
+
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">Argparse for Python CLI</h1>
+    <time class="post-date"
+      datetime="2019-09-24 23:15:11 IST">24 Sep 2019</time>
+  </header>
+
+  
+
+<p>Argparse module in python is used to create CLI or Command Line Interfaces. There are other ways also to make CLI but Argparse makes it very easy and user-friendly.</p>
+
+<p>So, let&rsquo;s start&hellip;</p>
+
+<p>First of all you need import the argparse module in your program.</p>
+
+<pre><code class="language-python">import argparse
+</code></pre>
+
+<h3 id="argumentparser">ArgumentParser</h3>
+
+<p>Now, to use the module we have to create a Parser object.</p>
+
+<pre><code class="language-python">parser = argparse.ArgumentParser(description=&quot;The Best CLI Application&quot;)
+</code></pre>
+
+<p>The ArgumentParser takes several keyword arguments to setup description, other program settings.</p>
+
+<h3 id="arguments">Arguments</h3>
+
+<p>To accept and define arguments in the program, we have to call the <code>add_argument()</code> method on the parser.
+The <code>add_argument</code> accepts several options to provide information about the argument like name, default value or type of the value, action etc. The default action is to store the values.</p>
+
+<pre><code class="language-python">parser.add_argument('-number', action=&quot;store&quot;, type=int, help=&quot;An Integer&quot;)
+parser.add_argument('--flag', action=&quot;store_true&quot;, default=False, &quot;True/False Flag&quot;)
+</code></pre>
+
+<h3 id="parsing">Parsing</h3>
+
+<p>To parse the passed arguments, we can use the <code>parse_args()</code> method. It will convert each command line argument to appropriate type and then do the appropriate action.</p>
+
+<pre><code class="language-python">args = parser.parse_args()
+</code></pre>
+
+<h3 id="program">Program</h3>
+
+<p>Save the code as <code>mycli.py</code>.</p>
+
+<p>Now to run the program, use <code>python mycli.py</code> in your python console, depending upon the location of your program file.</p>
+
+<pre><code class="language-bash">λ python mycli.py --help
+usage: mycli.py [-h] [--flag] number
+
+The Best CLI Application
+
+positional arguments:
+  number      An Integer
+
+optional arguments:
+  -h, --help  show this help message and exit
+  --flag      True/False Flag
+</code></pre>
+
+<p>By default, ArgumentParser calculates the usage message from the arguments it contains. This default message can be overridden with the usage= keyword argument:</p>
+
+<pre><code class="language-python">parser = argparse.ArgumentParser(prog='PROG', usage='%(prog)s [options]')
+</code></pre>
+
+<p>The program name is available using the <code>%(prog)s</code> format specifier.</p>
+
+<pre><code class="language-bash">λ python mycli.py --help
+usage: PROG [options]
+</code></pre>
+
+<p>Now, lets try out our simple CLI Program.</p>
+
+<pre><code class="language-bash">λ python mycli.py 5 --f
+Namespace(flag=True, number=5)
+</code></pre>
+
+<p>Here <code>number</code> is positional argument and <code>--flag</code> or <code>--f</code> is optional.</p>
+
+<p>Argparse also handles the shortcut method for arguments, as shown above. We can use <code>--f</code> in place of <code>--flag</code>.</p>
+
+<p>Our program here returned a Namespace object. <code>Namespace</code> is a Simple class used by default by <code>parse_args()</code> to create an object holding attributes and return it.</p>
+
+<p>We can also use the <code>parser.parse_args()</code> to get individual arguments. For example:</p>
+
+<pre><code class="language-python">args = parse.parse_args()
+print(args.flag)
+print(args.number)
+</code></pre>
+
+<pre><code class="language-bash">λ python mycli.py 5 --f
+True
+5
+</code></pre>
+
+<p>This completes a brief and simple overview of the <code>Argparse</code> module in python. You can get the detailed information about the module and other options to customize the behaviour of your program in the official <a href="https://docs.python.org/3/library/argparse.html">Python Documentation</a>.</p>
+
+<p>You can also commet on this post if there is any query or suggestion about the article.</p>
+
+<p><strong><em>rksh</em></strong></p>
+
+
+</article>
+
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "rkshrksh" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<footer class="site-footer">
+  <span itemscope itemtype="http://schema.org/Person">
+    <link itemprop="url" href="http://rakeshgautam.com/">
+
+    <div class="social">      
+      <a itemprop="sameAs" href="https://github.com/rkshrksh" title="GitHub"><i
+          class="icon-github"></i></a>
+
+      <a itemprop="sameAs" href="https://twitter.com/rksh_gautam" title="Twitter"><i
+          class="icon-twitter"></i></a>
+
+      <a itemprop="sameAs" href="https://linkedin.com/in/rakesh-gautam" title="Linkedin"><i
+          class="icon-linkedin"></i></a>
+
+      <a itemprop="sameAs" href="mailto:rkshrkshme@gmail.com" title="Email"><i class="icon-mail"></i></a>
+    </div>
+  </span>
+</footer>
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+</body>
+
+</html>
