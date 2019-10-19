@@ -6,10 +6,21 @@
     <description>Recent content in Posts on Rakesh&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 24 Sep 2019 23:15:11 +0530</lastBuildDate>
+    <lastBuildDate>Sat, 19 Oct 2019 20:46:10 +0530</lastBuildDate>
     
 	<atom:link href="http://rakeshgautam.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Namedtuple in Python</title>
+      <link>http://rakeshgautam.com/posts/namedtuple-in-python/</link>
+      <pubDate>Sat, 19 Oct 2019 20:46:10 +0530</pubDate>
+      
+      <guid>http://rakeshgautam.com/posts/namedtuple-in-python/</guid>
+      <description>To understand NamedTuple, you first have to understand what a regular Tuple in Python is.
+What is a Tuple A Tuple in Python is similar to a List. The difference between a Tuple and a List is that the Tuples are Immutable, which means that you can&amp;rsquo;t change the elements of a Tuple once it is assigned.
+The other difference is that the Tuples are defined using parentheses () instead of square brackets [] in a list.</description>
+    </item>
     
     <item>
       <title>Argparse for Python CLI</title>
