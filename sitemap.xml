@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://rakeshgautam.com/posts/namedtuple-in-python/</loc>
-    <lastmod>2019-10-19T20:46:10+05:30</lastmod>
-  </url>
-  
-  <url>
     <loc>http://rakeshgautam.com/posts/</loc>
-    <lastmod>2019-10-19T20:46:10+05:30</lastmod>
+    <lastmod>2019-11-11T08:48:48+05:30</lastmod>
   </url>
   
   <url>
     <loc>http://rakeshgautam.com/</loc>
+    <lastmod>2019-11-11T08:48:48+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rakeshgautam.com/posts/using-defaultdict-in-python/</loc>
+    <lastmod>2019-11-11T08:48:48+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rakeshgautam.com/posts/namedtuple-in-python/</loc>
     <lastmod>2019-10-19T20:46:10+05:30</lastmod>
   </url>
   

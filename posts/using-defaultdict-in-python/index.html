@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Hugo 0.58.3" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Rakesh Gautam">
+  <meta property="og:url" content="http://rakeshgautam.com/posts/using-defaultdict-in-python/">
+
+  <title>Using Defaultdict in Python - Rakesh&#39;s Blog</title>
+  <meta property="og:title" content="Using Defaultdict in Python - Rakesh&#39;s Blog">
+  <meta property="og:type" content="article">
+  <meta name="description" content="">
+
+  <link rel="shortcut icon" href="/img/favicon.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
+  <link rel="stylesheet" href="/css/highlight.css">
+  <link rel="stylesheet" href="/css/rksha.css">
+  <link rel="stylesheet" href="/css/fontello.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Rakesh&#39;s Blog">
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-150426671-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</head>
+
+<body>
+  <div class="container">
+    <nav class="site-nav">
+      <a href="http://rakeshgautam.com/">Home</a>
+    </nav>
+
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">Using Defaultdict in Python</h1>
+    <time class="post-date"
+      datetime="2019-11-11 08:48:48 IST">11 Nov 2019</time>
+  </header>
+
+  <p>Dictionaries are a great convenient way to store and retrieve data by name in python.</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; mydict = { 'first_name' : 'Rakesh', 'last_name': 'Gautam' }
+&gt;&gt;&gt; print(mydict['first_name'])
+Rakesh
+&gt;&gt;&gt; print(mydict['last_name'])
+Gautam
+</code></pre>
+
+<p>But if you try to get an item with a key that is not currently in the dictionary, Regular Python dictionary raises a <code>KeyError</code> exception.</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; print(mydict['middle_name'])
+Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+KeyError: 'middle_name'
+</code></pre>
+
+<p>While this is easy to handle manually, the <code>defaultdict</code> simplifies this kind of task.</p>
+
+<p><code>DefaultDict</code> works exactly like a regular python <code>Dict</code>, but it is initialized with a function, that takes no argument and provides a default value for a non-existent key.</p>
+
+<p><code>DefaultDict</code> never raises a <code>KeyError</code> exception. If any key does not exist, its value gets returned by the DefaultDict.</p>
+
+<p><code>DefaultDict</code> is part of the python&rsquo;s <code>collections</code> package.</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; from collections import defaultdict
+
+&gt;&gt;&gt; mydict = { 'first_name' : 'Rakesh', 'last_name': 'Gautam' }
+&gt;&gt;&gt; def_dict = defaultdict(str, mydict)
+&gt;&gt;&gt; print(def_dict['first_name'])
+Rakesh
+&gt;&gt;&gt; print(def_dict['middle_name'])
+
+&gt;&gt;&gt;
+</code></pre>
+
+<p>Here, this didn&rsquo;t raise any <code>KeyError</code> exception because we passed <code>str</code> as an argument to the <code>defaultdict</code>.</p>
+
+<p><code>def_dict</code> returns <code>&quot;&quot;</code> (default value for string) here if we pass a non-existant key as an argument.</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; my_dict = {'a' : 10, 'b': 20, 'c':30}
+
+&gt;&gt;&gt; dict_2 = defaultdict(lambda : 0, my_dict)
+&gt;&gt;&gt; print(dict_2['x'])
+0
+
+</code></pre>
+
+<p>Here, we passed <code>lambda : 0</code> as a function to defaultdict, and this will return <code>0</code>, whenever we ask for a non-existent key.</p>
+
+<p>We can use any function that takes no argument, in the <code>defaultdict</code>. If someone attempts to access a key to which no value has been assigned, that function will be called (without arguments) and its return value is used as the default value for the key.</p>
+
+
+</article>
+
+<footer class="site-footer">
+  <span itemscope itemtype="http://schema.org/Person">
+    <link itemprop="url" href="http://rakeshgautam.com/">
+
+    <div class="social">      
+      <a itemprop="sameAs" href="https://github.com/rkshrksh" title="GitHub"><i
+          class="icon-github"></i></a>
+
+      <a itemprop="sameAs" href="https://twitter.com/rksh_gautam" title="Twitter"><i
+          class="icon-twitter"></i></a>
+
+      <a itemprop="sameAs" href="https://linkedin.com/in/rakesh-gautam" title="Linkedin"><i
+          class="icon-linkedin"></i></a>
+
+      <a itemprop="sameAs" href="mailto:rkshrkshme@gmail.com" title="Email"><i class="icon-mail"></i></a>
+    </div>
+  </span>
+</footer>
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+</body>
+
+</html>
