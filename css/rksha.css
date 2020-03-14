@@ -89,7 +89,9 @@ a {
 
 a:hover {
   border-bottom-color: currentColor;
-  color: #686868;
+  color: #fbfbfb;
+  padding: 2px;
+  background-color: #000;
 }
 
 ol,
