@@ -3,12 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://rakeshgautam.com/posts/</loc>
-    <lastmod>2019-11-11T08:48:48+05:30</lastmod>
+    <loc>http://rakeshgautam.com/fq/</loc>
+    <lastmod>2020-04-25T01:39:46+05:30</lastmod>
   </url>
   
   <url>
     <loc>http://rakeshgautam.com/</loc>
+    <lastmod>2020-04-25T01:39:46+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rakeshgautam.com/fq/terms/</loc>
+    <lastmod>2020-04-25T01:39:46+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rakeshgautam.com/fq/privacy/</loc>
+    <lastmod>2020-04-25T01:27:42+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rakeshgautam.com/posts/</loc>
     <lastmod>2019-11-11T08:48:48+05:30</lastmod>
   </url>
   

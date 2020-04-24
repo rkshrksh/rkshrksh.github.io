@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fqs on Rakesh&#39;s Blog</title>
+    <link>http://rakeshgautam.com/fq/</link>
+    <description>Recent content in Fqs on Rakesh&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 25 Apr 2020 01:39:46 +0530</lastBuildDate>
+    
+	<atom:link href="http://rakeshgautam.com/fq/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Terms &amp; Conditions</title>
+      <link>http://rakeshgautam.com/fq/terms/</link>
+      <pubDate>Sat, 25 Apr 2020 01:39:46 +0530</pubDate>
+      
+      <guid>http://rakeshgautam.com/fq/terms/</guid>
+      <description>By downloading or using the app, these terms will automatically apply to you – you should make sure therefore that you read them carefully before using the app. You’re not allowed to copy, or modify the app, any part of the app, or our trademarks in any way. You’re not allowed to attempt to extract the source code of the app, and you also shouldn’t try to translate the app into other languages, or make derivative versions.</description>
+    </item>
+    
+    <item>
+      <title>Privacy Policy</title>
+      <link>http://rakeshgautam.com/fq/privacy/</link>
+      <pubDate>Sat, 25 Apr 2020 01:27:42 +0530</pubDate>
+      
+      <guid>http://rakeshgautam.com/fq/privacy/</guid>
+      <description>rkshrksh built the Forever Quotes app as a Free app. This SERVICE is provided by rkshrksh at no cost and is intended for use as is.
+This page is used to inform visitors regarding my policies with the collection, use, and disclosure of Personal Information if anyone decided to use my Service.
+If you choose to use my Service, then you agree to the collection and use of information in relation to this policy.</description>
+    </item>
+    
+  </channel>
+</rss>
