@@ -3,12 +3,12 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Hugo 0.58.3" />
+  <meta name="generator" content="Hugo 0.85.0" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Rakesh Gautam">
-  <meta property="og:url" content="http://rakeshgautam.com/posts/using-defaultdict-in-python/">
+  <meta property="og:url" content="https://rksh.me/posts/using-defaultdict-in-python/">
 
   <title>Using Defaultdict in Python - Rakesh&#39;s Blog</title>
   <meta property="og:title" content="Using Defaultdict in Python - Rakesh&#39;s Blog">
@@ -27,7 +27,7 @@
 <body>
   <div class="container">
     <nav class="site-nav">
-      <a href="http://rakeshgautam.com/">Home</a>
+      <a href="https://rksh.me/">Home</a>
     </nav>
 
 <article class="post">
@@ -38,55 +38,38 @@
   </header>
 
   <p>Dictionaries are a great convenient way to store and retrieve data by name in python.</p>
-
-<pre><code class="language-python">&gt;&gt;&gt; mydict = { 'first_name' : 'Rakesh', 'last_name': 'Gautam' }
-&gt;&gt;&gt; print(mydict['first_name'])
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> mydict <span style="color:#f92672">=</span> { <span style="color:#e6db74">&#39;first_name&#39;</span> : <span style="color:#e6db74">&#39;Rakesh&#39;</span>, <span style="color:#e6db74">&#39;last_name&#39;</span>: <span style="color:#e6db74">&#39;Gautam&#39;</span> }
+<span style="color:#f92672">&gt;&gt;&gt;</span> print(mydict[<span style="color:#e6db74">&#39;first_name&#39;</span>])
 Rakesh
-&gt;&gt;&gt; print(mydict['last_name'])
+<span style="color:#f92672">&gt;&gt;&gt;</span> print(mydict[<span style="color:#e6db74">&#39;last_name&#39;</span>])
 Gautam
-</code></pre>
-
-<p>But if you try to get an item with a key that is not currently in the dictionary, Regular Python dictionary raises a <code>KeyError</code> exception.</p>
-
-<pre><code class="language-python">&gt;&gt;&gt; print(mydict['middle_name'])
+</code></pre></div><p>But if you try to get an item with a key that is not currently in the dictionary, Regular Python dictionary raises a <code>KeyError</code> exception.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> print(mydict[<span style="color:#e6db74">&#39;middle_name&#39;</span>])
 Traceback (most recent call last):
-  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
-KeyError: 'middle_name'
-</code></pre>
-
-<p>While this is easy to handle manually, the <code>defaultdict</code> simplifies this kind of task.</p>
-
+  File <span style="color:#e6db74">&#34;&lt;stdin&gt;&#34;</span>, line <span style="color:#ae81ff">1</span>, <span style="color:#f92672">in</span> <span style="color:#f92672">&lt;</span>module<span style="color:#f92672">&gt;</span>
+<span style="color:#a6e22e">KeyError</span>: <span style="color:#e6db74">&#39;middle_name&#39;</span>
+</code></pre></div><p>While this is easy to handle manually, the <code>defaultdict</code> simplifies this kind of task.</p>
 <p><code>DefaultDict</code> works exactly like a regular python <code>Dict</code>, but it is initialized with a function, that takes no argument and provides a default value for a non-existent key.</p>
-
 <p><code>DefaultDict</code> never raises a <code>KeyError</code> exception. If any key does not exist, its value gets returned by the DefaultDict.</p>
-
 <p><code>DefaultDict</code> is part of the python&rsquo;s <code>collections</code> package.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> defaultdict
 
-<pre><code class="language-python">&gt;&gt;&gt; from collections import defaultdict
-
-&gt;&gt;&gt; mydict = { 'first_name' : 'Rakesh', 'last_name': 'Gautam' }
-&gt;&gt;&gt; def_dict = defaultdict(str, mydict)
-&gt;&gt;&gt; print(def_dict['first_name'])
+<span style="color:#f92672">&gt;&gt;&gt;</span> mydict <span style="color:#f92672">=</span> { <span style="color:#e6db74">&#39;first_name&#39;</span> : <span style="color:#e6db74">&#39;Rakesh&#39;</span>, <span style="color:#e6db74">&#39;last_name&#39;</span>: <span style="color:#e6db74">&#39;Gautam&#39;</span> }
+<span style="color:#f92672">&gt;&gt;&gt;</span> def_dict <span style="color:#f92672">=</span> defaultdict(str, mydict)
+<span style="color:#f92672">&gt;&gt;&gt;</span> print(def_dict[<span style="color:#e6db74">&#39;first_name&#39;</span>])
 Rakesh
-&gt;&gt;&gt; print(def_dict['middle_name'])
+<span style="color:#f92672">&gt;&gt;&gt;</span> print(def_dict[<span style="color:#e6db74">&#39;middle_name&#39;</span>])
 
-&gt;&gt;&gt;
-</code></pre>
-
-<p>Here, this didn&rsquo;t raise any <code>KeyError</code> exception because we passed <code>str</code> as an argument to the <code>defaultdict</code>.</p>
-
+<span style="color:#f92672">&gt;&gt;&gt;</span>
+</code></pre></div><p>Here, this didn&rsquo;t raise any <code>KeyError</code> exception because we passed <code>str</code> as an argument to the <code>defaultdict</code>.</p>
 <p><code>def_dict</code> returns <code>&quot;&quot;</code> (default value for string) here if we pass a non-existant key as an argument.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> my_dict <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;a&#39;</span> : <span style="color:#ae81ff">10</span>, <span style="color:#e6db74">&#39;b&#39;</span>: <span style="color:#ae81ff">20</span>, <span style="color:#e6db74">&#39;c&#39;</span>:<span style="color:#ae81ff">30</span>}
 
-<pre><code class="language-python">&gt;&gt;&gt; my_dict = {'a' : 10, 'b': 20, 'c':30}
+<span style="color:#f92672">&gt;&gt;&gt;</span> dict_2 <span style="color:#f92672">=</span> defaultdict(<span style="color:#66d9ef">lambda</span> : <span style="color:#ae81ff">0</span>, my_dict)
+<span style="color:#f92672">&gt;&gt;&gt;</span> print(dict_2[<span style="color:#e6db74">&#39;x&#39;</span>])
+<span style="color:#ae81ff">0</span>
 
-&gt;&gt;&gt; dict_2 = defaultdict(lambda : 0, my_dict)
-&gt;&gt;&gt; print(dict_2['x'])
-0
-
-</code></pre>
-
-<p>Here, we passed <code>lambda : 0</code> as a function to defaultdict, and this will return <code>0</code>, whenever we ask for a non-existent key.</p>
-
+</code></pre></div><p>Here, we passed <code>lambda : 0</code> as a function to defaultdict, and this will return <code>0</code>, whenever we ask for a non-existent key.</p>
 <p>We can use any function that takes no argument, in the <code>defaultdict</code>. If someone attempts to access a key to which no value has been assigned, that function will be called (without arguments) and its return value is used as the default value for the key.</p>
 
 
@@ -94,7 +77,7 @@ Rakesh
 
 <footer class="site-footer">
   <span itemscope itemtype="http://schema.org/Person">
-    <link itemprop="url" href="http://rakeshgautam.com/">
+    <link itemprop="url" href="https://rksh.me/">
 
     <div class="social">      
       <a itemprop="sameAs" href="https://github.com/rkshrksh" title="GitHub"><i

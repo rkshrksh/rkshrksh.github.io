@@ -1,53 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
-    <loc>http://rakeshgautam.com/fq/</loc>
+    <loc>https://rksh.me/fq/</loc>
     <lastmod>2020-04-25T01:39:46+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://rakeshgautam.com/</loc>
+  </url><url>
+    <loc>https://rksh.me/</loc>
     <lastmod>2020-04-25T01:39:46+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://rakeshgautam.com/fq/terms/</loc>
+  </url><url>
+    <loc>https://rksh.me/fq/terms/</loc>
     <lastmod>2020-04-25T01:39:46+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://rakeshgautam.com/fq/privacy/</loc>
+  </url><url>
+    <loc>https://rksh.me/fq/privacy/</loc>
     <lastmod>2020-04-25T01:27:42+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://rakeshgautam.com/posts/</loc>
+  </url><url>
+    <loc>https://rksh.me/posts/</loc>
     <lastmod>2019-11-11T08:48:48+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://rakeshgautam.com/posts/using-defaultdict-in-python/</loc>
+  </url><url>
+    <loc>https://rksh.me/posts/using-defaultdict-in-python/</loc>
     <lastmod>2019-11-11T08:48:48+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://rakeshgautam.com/posts/namedtuple-in-python/</loc>
+  </url><url>
+    <loc>https://rksh.me/posts/namedtuple-in-python/</loc>
     <lastmod>2019-10-19T20:46:10+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://rakeshgautam.com/posts/argparse-for-python-cli/</loc>
+  </url><url>
+    <loc>https://rksh.me/posts/argparse-for-python-cli/</loc>
     <lastmod>2019-09-24T23:15:11+05:30</lastmod>
+  </url><url>
+    <loc>https://rksh.me/categories/</loc>
+  </url><url>
+    <loc>https://rksh.me/tags/</loc>
   </url>
-  
-  <url>
-    <loc>http://rakeshgautam.com/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>http://rakeshgautam.com/tags/</loc>
-  </url>
-  
 </urlset>

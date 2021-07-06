@@ -1,33 +1,29 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Rakesh&#39;s Blog</title>
-    <link>http://rakeshgautam.com/posts/</link>
+    <link>https://rksh.me/posts/</link>
     <description>Recent content in Posts on Rakesh&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Nov 2019 08:48:48 +0530</lastBuildDate>
-    
-	<atom:link href="http://rakeshgautam.com/posts/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 11 Nov 2019 08:48:48 +0530</lastBuildDate><atom:link href="https://rksh.me/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Using Defaultdict in Python</title>
-      <link>http://rakeshgautam.com/posts/using-defaultdict-in-python/</link>
+      <link>https://rksh.me/posts/using-defaultdict-in-python/</link>
       <pubDate>Mon, 11 Nov 2019 08:48:48 +0530</pubDate>
       
-      <guid>http://rakeshgautam.com/posts/using-defaultdict-in-python/</guid>
+      <guid>https://rksh.me/posts/using-defaultdict-in-python/</guid>
       <description>Dictionaries are a great convenient way to store and retrieve data by name in python.
-&amp;gt;&amp;gt;&amp;gt; mydict = { &#39;first_name&#39; : &#39;Rakesh&#39;, &#39;last_name&#39;: &#39;Gautam&#39; } &amp;gt;&amp;gt;&amp;gt; print(mydict[&#39;first_name&#39;]) Rakesh &amp;gt;&amp;gt;&amp;gt; print(mydict[&#39;last_name&#39;]) Gautam  But if you try to get an item with a key that is not currently in the dictionary, Regular Python dictionary raises a KeyError exception.
-&amp;gt;&amp;gt;&amp;gt; print(mydict[&#39;middle_name&#39;]) Traceback (most recent call last): File &amp;quot;&amp;lt;stdin&amp;gt;&amp;quot;, line 1, in &amp;lt;module&amp;gt; KeyError: &#39;middle_name&#39;  While this is easy to handle manually, the defaultdict simplifies this kind of task.</description>
+&amp;gt;&amp;gt;&amp;gt; mydict = { &amp;#39;first_name&amp;#39; : &amp;#39;Rakesh&amp;#39;, &amp;#39;last_name&amp;#39;: &amp;#39;Gautam&amp;#39; } &amp;gt;&amp;gt;&amp;gt; print(mydict[&amp;#39;first_name&amp;#39;]) Rakesh &amp;gt;&amp;gt;&amp;gt; print(mydict[&amp;#39;last_name&amp;#39;]) Gautam But if you try to get an item with a key that is not currently in the dictionary, Regular Python dictionary raises a KeyError exception.
+&amp;gt;&amp;gt;&amp;gt; print(mydict[&amp;#39;middle_name&amp;#39;]) Traceback (most recent call last): File &amp;#34;&amp;lt;stdin&amp;gt;&amp;#34;, line 1, in &amp;lt;module&amp;gt; KeyError: &amp;#39;middle_name&amp;#39; While this is easy to handle manually, the defaultdict simplifies this kind of task.</description>
     </item>
     
     <item>
       <title>Namedtuple in Python</title>
-      <link>http://rakeshgautam.com/posts/namedtuple-in-python/</link>
+      <link>https://rksh.me/posts/namedtuple-in-python/</link>
       <pubDate>Sat, 19 Oct 2019 20:46:10 +0530</pubDate>
       
-      <guid>http://rakeshgautam.com/posts/namedtuple-in-python/</guid>
+      <guid>https://rksh.me/posts/namedtuple-in-python/</guid>
       <description>To understand NamedTuple, you first have to understand what a regular Tuple in Python is.
 What is a Tuple A Tuple in Python is similar to a List. The difference between a Tuple and a List is that the Tuples are Immutable, which means that you can&amp;rsquo;t change the elements of a Tuple once it is assigned.
 The other difference is that the Tuples are defined using parentheses () instead of square brackets [] in a list.</description>
@@ -35,15 +31,15 @@ The other difference is that the Tuples are defined using parentheses () instead
     
     <item>
       <title>Argparse for Python CLI</title>
-      <link>http://rakeshgautam.com/posts/argparse-for-python-cli/</link>
+      <link>https://rksh.me/posts/argparse-for-python-cli/</link>
       <pubDate>Tue, 24 Sep 2019 23:15:11 +0530</pubDate>
       
-      <guid>http://rakeshgautam.com/posts/argparse-for-python-cli/</guid>
+      <guid>https://rksh.me/posts/argparse-for-python-cli/</guid>
       <description>Argparse module in python is used to create CLI or Command Line Interfaces. There are other ways also to make CLI but Argparse makes it very easy and user-friendly.
 So, let&amp;rsquo;s start&amp;hellip;
 First of all you need import the argparse module in your program.
-import argparse  ArgumentParser Now, to use the module we have to create a Parser object.
-parser = argparse.ArgumentParser(description=&amp;quot;The Best CLI Application&amp;quot;)  The ArgumentParser takes several keyword arguments to setup description, other program settings.</description>
+import argparse ArgumentParser Now, to use the module we have to create a Parser object.
+parser = argparse.ArgumentParser(description=&amp;#34;The Best CLI Application&amp;#34;) The ArgumentParser takes several keyword arguments to setup description, other program settings.</description>
     </item>
     
   </channel>

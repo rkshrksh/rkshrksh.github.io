@@ -3,12 +3,12 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Hugo 0.58.3" />
+  <meta name="generator" content="Hugo 0.85.0" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Rakesh Gautam">
-  <meta property="og:url" content="http://rakeshgautam.com/posts/argparse-for-python-cli/">
+  <meta property="og:url" content="https://rksh.me/posts/argparse-for-python-cli/">
 
   <title>Argparse for Python CLI - Rakesh&#39;s Blog</title>
   <meta property="og:title" content="Argparse for Python CLI - Rakesh&#39;s Blog">
@@ -27,7 +27,7 @@
 <body>
   <div class="container">
     <nav class="site-nav">
-      <a href="http://rakeshgautam.com/">Home</a>
+      <a href="https://rksh.me/">Home</a>
     </nav>
 
 <article class="post">
@@ -37,50 +37,27 @@
       datetime="2019-09-24 23:15:11 IST">24 Sep 2019</time>
   </header>
 
-  
-
-<p>Argparse module in python is used to create CLI or Command Line Interfaces. There are other ways also to make CLI but Argparse makes it very easy and user-friendly.</p>
-
+  <p>Argparse module in python is used to create CLI or Command Line Interfaces. There are other ways also to make CLI but Argparse makes it very easy and user-friendly.</p>
 <p>So, let&rsquo;s start&hellip;</p>
-
 <p>First of all you need import the argparse module in your program.</p>
-
-<pre><code class="language-python">import argparse
-</code></pre>
-
-<h3 id="argumentparser">ArgumentParser</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> argparse
+</code></pre></div><h3 id="argumentparser">ArgumentParser</h3>
 <p>Now, to use the module we have to create a Parser object.</p>
-
-<pre><code class="language-python">parser = argparse.ArgumentParser(description=&quot;The Best CLI Application&quot;)
-</code></pre>
-
-<p>The ArgumentParser takes several keyword arguments to setup description, other program settings.</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">parser <span style="color:#f92672">=</span> argparse<span style="color:#f92672">.</span>ArgumentParser(description<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;The Best CLI Application&#34;</span>)
+</code></pre></div><p>The ArgumentParser takes several keyword arguments to setup description, other program settings.</p>
 <h3 id="arguments">Arguments</h3>
-
 <p>To accept and define arguments in the program, we have to call the <code>add_argument()</code> method on the parser.
 The <code>add_argument</code> accepts several options to provide information about the argument like name, default value or type of the value, action etc. The default action is to store the values.</p>
-
-<pre><code class="language-python">parser.add_argument('-number', action=&quot;store&quot;, type=int, help=&quot;An Integer&quot;)
-parser.add_argument('--flag', action=&quot;store_true&quot;, default=False, &quot;True/False Flag&quot;)
-</code></pre>
-
-<h3 id="parsing">Parsing</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">parser<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#39;-number&#39;</span>, action<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;store&#34;</span>, type<span style="color:#f92672">=</span>int, help<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;An Integer&#34;</span>)
+parser<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#39;--flag&#39;</span>, action<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;store_true&#34;</span>, default<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, <span style="color:#e6db74">&#34;True/False Flag&#34;</span>)
+</code></pre></div><h3 id="parsing">Parsing</h3>
 <p>To parse the passed arguments, we can use the <code>parse_args()</code> method. It will convert each command line argument to appropriate type and then do the appropriate action.</p>
-
-<pre><code class="language-python">args = parser.parse_args()
-</code></pre>
-
-<h3 id="program">Program</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">args <span style="color:#f92672">=</span> parser<span style="color:#f92672">.</span>parse_args()
+</code></pre></div><h3 id="program">Program</h3>
 <p>Save the code as <code>mycli.py</code>.</p>
-
 <p>Now to run the program, use <code>python mycli.py</code> in your python console, depending upon the location of your program file.</p>
-
-<pre><code class="language-bash">λ python mycli.py --help
-usage: mycli.py [-h] [--flag] number
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">λ python mycli.py --help
+usage: mycli.py <span style="color:#f92672">[</span>-h<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--flag<span style="color:#f92672">]</span> number
 
 The Best CLI Application
 
@@ -90,47 +67,26 @@ positional arguments:
 optional arguments:
   -h, --help  show this help message and exit
   --flag      True/False Flag
-</code></pre>
-
-<p>By default, ArgumentParser calculates the usage message from the arguments it contains. This default message can be overridden with the usage= keyword argument:</p>
-
-<pre><code class="language-python">parser = argparse.ArgumentParser(prog='PROG', usage='%(prog)s [options]')
-</code></pre>
-
-<p>The program name is available using the <code>%(prog)s</code> format specifier.</p>
-
-<pre><code class="language-bash">λ python mycli.py --help
-usage: PROG [options]
-</code></pre>
-
-<p>Now, lets try out our simple CLI Program.</p>
-
-<pre><code class="language-bash">λ python mycli.py 5 --f
-Namespace(flag=True, number=5)
-</code></pre>
-
-<p>Here <code>number</code> is positional argument and <code>--flag</code> or <code>--f</code> is optional.</p>
-
+</code></pre></div><p>By default, ArgumentParser calculates the usage message from the arguments it contains. This default message can be overridden with the usage= keyword argument:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">parser <span style="color:#f92672">=</span> argparse<span style="color:#f92672">.</span>ArgumentParser(prog<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;PROG&#39;</span>, usage<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%(prog)s</span><span style="color:#e6db74"> [options]&#39;</span>)
+</code></pre></div><p>The program name is available using the <code>%(prog)s</code> format specifier.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">λ python mycli.py --help
+usage: PROG <span style="color:#f92672">[</span>options<span style="color:#f92672">]</span>
+</code></pre></div><p>Now, lets try out our simple CLI Program.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">λ python mycli.py <span style="color:#ae81ff">5</span> --f
+Namespace<span style="color:#f92672">(</span>flag<span style="color:#f92672">=</span>True, number<span style="color:#f92672">=</span>5<span style="color:#f92672">)</span>
+</code></pre></div><p>Here <code>number</code> is positional argument and <code>--flag</code> or <code>--f</code> is optional.</p>
 <p>Argparse also handles the shortcut method for arguments, as shown above. We can use <code>--f</code> in place of <code>--flag</code>.</p>
-
 <p>Our program here returned a Namespace object. <code>Namespace</code> is a Simple class used by default by <code>parse_args()</code> to create an object holding attributes and return it.</p>
-
 <p>We can also use the <code>parser.parse_args()</code> to get individual arguments. For example:</p>
-
-<pre><code class="language-python">args = parse.parse_args()
-print(args.flag)
-print(args.number)
-</code></pre>
-
-<pre><code class="language-bash">λ python mycli.py 5 --f
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">args <span style="color:#f92672">=</span> parse<span style="color:#f92672">.</span>parse_args()
+print(args<span style="color:#f92672">.</span>flag)
+print(args<span style="color:#f92672">.</span>number)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">λ python mycli.py <span style="color:#ae81ff">5</span> --f
 True
-5
-</code></pre>
-
-<p>This completes a brief and simple overview of the <code>Argparse</code> module in python. You can get the detailed information about the module and other options to customize the behaviour of your program in the official <a href="https://docs.python.org/3/library/argparse.html">Python Documentation</a>.</p>
-
+<span style="color:#ae81ff">5</span>
+</code></pre></div><p>This completes a brief and simple overview of the <code>Argparse</code> module in python. You can get the detailed information about the module and other options to customize the behaviour of your program in the official <a href="https://docs.python.org/3/library/argparse.html">Python Documentation</a>.</p>
 <p>You can also commet on this post if there is any query or suggestion about the article.</p>
-
 <p><strong><em>rksh</em></strong></p>
 
 
@@ -138,7 +94,7 @@ True
 
 <footer class="site-footer">
   <span itemscope itemtype="http://schema.org/Person">
-    <link itemprop="url" href="http://rakeshgautam.com/">
+    <link itemprop="url" href="https://rksh.me/">
 
     <div class="social">      
       <a itemprop="sameAs" href="https://github.com/rkshrksh" title="GitHub"><i

@@ -3,12 +3,12 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Hugo 0.58.3" />
+  <meta name="generator" content="Hugo 0.85.0" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Rakesh Gautam">
-  <meta property="og:url" content="http://rakeshgautam.com/posts/namedtuple-in-python/">
+  <meta property="og:url" content="https://rksh.me/posts/namedtuple-in-python/">
 
   <title>Namedtuple in Python - Rakesh&#39;s Blog</title>
   <meta property="og:title" content="Namedtuple in Python - Rakesh&#39;s Blog">
@@ -27,7 +27,7 @@
 <body>
   <div class="container">
     <nav class="site-nav">
-      <a href="http://rakeshgautam.com/">Home</a>
+      <a href="https://rksh.me/">Home</a>
     </nav>
 
 <article class="post">
@@ -37,41 +37,24 @@
       datetime="2019-10-19 20:46:10 IST">19 Oct 2019</time>
   </header>
 
-  
-
-<p>To understand NamedTuple, you first have to understand what a regular Tuple in Python is.</p>
-
+  <p>To understand NamedTuple, you first have to understand what a regular Tuple in Python is.</p>
 <h3 id="what-is-a-tuple">What is a Tuple</h3>
-
 <p>A Tuple in Python is similar to a List. The difference between a Tuple and a List is that the Tuples are Immutable, which means that you can&rsquo;t change the elements of a Tuple once it is assigned.</p>
-
 <p>The other difference is that the Tuples are defined using parentheses <code>()</code> instead of square brackets <code>[]</code> in a list.</p>
-
 <p>Tuples are also indexed with Integers, like List. To access a value in a tuple, you have to provide its numeric index.</p>
-
 <h3 id="what-is-namedtuple">What is Namedtuple</h3>
-
 <p>As the name suggests, Namedtuples are just Tuples but with Names assigned to its elements.  NamedTuples can do everything that a Tuple can do. But the advantage of NamedTuples over Tuple is that you can access its values using the numeric index as well as the Names preassigned to its fields.</p>
-
 <p>When the number of elements is large, it becomes hard to remember which index is what. So namedtuple comes handy in that situation with all the features of a Normal Tuple and an added feature of accessibility with field names.</p>
-
 <p>This problem can also be solved by creating a class with read-only properties and accessing values by <code>classname.fieldname</code>. But a class seems Overkill for this purpose. With Namedtuples, we avoid all the code for a class and still can access the values like <code>record.fieldname</code>.</p>
-
 <p>You can still use the index number to access the values stored. So namedtuple is like a compromise between a Tuple and a List/Dictionary in Python.</p>
-
 <h3 id="how-to-create-a-namedtuple">How to create a Namedtuple</h3>
-
 <p>Namedtuple is present in the <code>collections</code> module of Python.</p>
-
 <pre><code>&gt;&gt;&gt; from collections import namedtuple
 &gt;&gt;&gt; Person = namedtuple(&quot;Person&quot;, &quot;name age sex&quot;)
 &gt;&gt;&gt; person1 = Person(&quot;Rakesh&quot;, 24, &quot;male&quot;)
 </code></pre>
-
 <p>Each namedtuple is represented by its own class, created by using the <code>namedtuple()</code> factory method. The first argument is the name of the new class/namedtuple and the second argument is a string containing the names of the elements, separated by spaces or commas.</p>
-
 <p>After creating the structure and providing values to the namedtuple as shown in the above code block, you can use the dot notation to access the values in our Person namedtuple.</p>
-
 <pre><code>&gt;&gt;&gt; print(person1.name)
 Rakesh
 &gt;&gt;&gt; print(person1.age)
@@ -79,9 +62,7 @@ Rakesh
 &gt;&gt;&gt; print(person1.sex)
 male
 </code></pre>
-
 <p>The values can also be accessed using the numeric index like the regular tuples and lists.</p>
-
 <pre><code>&gt;&gt;&gt; person1[0]
 'Rakesh'
 &gt;&gt;&gt; person1[1]
@@ -89,55 +70,37 @@ male
 &gt;&gt;&gt; person1[2]
 'male'
 </code></pre>
-
 <p>Both above code blocks provide the same output, but with different access methods. So you can use whichever notation you find useful.</p>
-
 <h3 id="attributes-of-a-namedtuple">Attributes of a Namedtuple</h3>
-
-<h4 id="fields">_fields</h4>
-
+<h4 id="_fields">_fields</h4>
 <p>Use this to get the field names of all the items in a namedtuple.</p>
-
 <pre><code>&gt;&gt;&gt; person1._fields
 ('name', 'age', 'sex')
 </code></pre>
-
-<h4 id="replace">_replace</h4>
-
+<h4 id="_replace">_replace</h4>
 <p>Namedtuple is immutable but we can use this <code>_replace</code> which returns a shallow copy of the namedtuple, with specified property values changed. The original namedtuple stays unchanged.</p>
-
 <pre><code>&gt;&gt;&gt; person1._replace(name=&quot;Gautam&quot;)
 Person(name='Gautam', age=24, sex='male')
 </code></pre>
-
-<h4 id="asdict">_asdict</h4>
-
+<h4 id="_asdict">_asdict</h4>
 <p>This returns the contents of a namedtuple as an ordered dictionary.</p>
-
 <pre><code>&gt;&gt;&gt; person1._asdict()
 OrderedDict([('name', 'Rakesh'), ('age', 24), ('sex', 'male')])
 </code></pre>
-
 <p>The above code returns person1 namedtuple as an OrderDict, in the order, they were added.</p>
-
-<h4 id="make">_make</h4>
-
+<h4 id="_make">_make</h4>
 <p>This can be used to create an instance of a namedtuple from a sequence or iterable. It comes handy when you have to create a Namedtuple from Existing data.</p>
-
 <pre><code>&gt;&gt;&gt; p2 = [&quot;Eli&quot;, 21, &quot;male&quot;]
 &gt;&gt;&gt; person2 = Person._make(p2)
 &gt;&gt;&gt; person2
 Person(name='Eli', age=21, sex='male')
 </code></pre>
-
 <h3 id="benefits-of-using-namedtuples">Benefits of using Namedtuples</h3>
-
 <ul>
 <li>You can access values using the names of the fields as well as the indexes.</li>
 <li>Namedtuples are as memory efficient as regular Tuples because it does not have per-instance dictionaries. This is also why it is faster than a dictionary.</li>
 <li>Improves the readability of your code.</li>
 </ul>
-
 <p>So, hopefully, this kind of clears what a Namedtuple is and how it can be used to improve the readability and to write clean code.</p>
 
 
@@ -145,7 +108,7 @@ Person(name='Eli', age=21, sex='male')
 
 <footer class="site-footer">
   <span itemscope itemtype="http://schema.org/Person">
-    <link itemprop="url" href="http://rakeshgautam.com/">
+    <link itemprop="url" href="https://rksh.me/">
 
     <div class="social">      
       <a itemprop="sameAs" href="https://github.com/rkshrksh" title="GitHub"><i
