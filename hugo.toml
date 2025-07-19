@@ -55,10 +55,19 @@ ignoreErrors = ["error-disable-taxonomy"]
 # https://gohugo.io/configuration/markup/#highlight
 [markup]
   [markup.highlight]
-    style = 'friendly'
-    lineNos = true
-    lineNumbersInTable = false
+    anchorLineNos = true
     codeFences = true
+    guessSyntax = false
+    hl_Lines = ''
+    hl_inline = false
+    lineAnchors = ''
+    lineNoStart = 1
+    lineNos = true
+    lineNumbersInTable = true
+    noClasses = true
+    style = 'github-dark'
+    tabWidth = 4
+    wrapperClass = 'highlight'
 [caches]
   [caches.images]
     dir = ':cacheDir/images'

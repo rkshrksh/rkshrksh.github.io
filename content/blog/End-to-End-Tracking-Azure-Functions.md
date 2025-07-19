@@ -11,8 +11,6 @@ tags = [
 ]
 +++
 
-# End-to-End Tracking in Azure Functions and Service Bus with `TrackingID`
-
 In today's cloud-native applications, services are increasingly distributed—events trigger processes, APIs invoke background jobs, and messages flow asynchronously via queues or topics.
 
 While this decoupling improves scalability, it makes **observability** more challenging. When something goes wrong, how do you trace the full journey of a single user's request across dozens of services?
@@ -27,17 +25,6 @@ The answer: **End-to-End Tracking** using a correlation ID or `TrackingID`. In t
 ## 1. Producer Function – Sending a Message with `TrackingID`
 
 ```csharp
-using System.IO;
-using System.Text;
-using System.Threading.Tasks;
-using Azure.Messaging.ServiceBus;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Extensions.Http;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Logging;
-using System;
-
 public static class ProducerFunction
 {
     [FunctionName("ProducerFunction")]
@@ -80,14 +67,6 @@ public static class ProducerFunction
 This consumer reads from the queue/topic, extracts the `TrackingID`, and uses `BeginScope` to enrich logs across the entire scope.
 
 ```csharp
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using Azure.Messaging.ServiceBus;
-using Microsoft.Azure.WebJobs;
-using Microsoft.Extensions.Logging;
-
 public static class ConsumerFunction
 {
     [FunctionName("ConsumerFunction")]
@@ -132,15 +111,6 @@ Once you've got the `TrackingID`, you can:
 - Store it in databases or audit trails
 
 Keeping track of the ID across services provides **unified visibility**, even on large-scale systems.
-
-## Testing It Locally
-
-1. **Run the Azure Functions** project with both functions.
-2. Send a request using `curl` or Postman to the producer:
-   ```
-   curl -X POST http://localhost:7071/api/ProducerFunction -d '{"message":"hello"}' -H "Content-Type: application/json"
-   ```
-3. Watch the logs in both producer and consumer. You should see consistent `TrackingID` values.
 
 ## Conclusion
 

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blog on rksh.me</title>
-    <link>http://localhost:1313/blog/</link>
-    <description>Recent content in Blog on rksh.me</description>
+    <title>Azure-Functions on rksh.me</title>
+    <link>http://localhost:1313/blog/azure-functions/</link>
+    <description>Recent content in Azure-Functions on rksh.me</description>
     <generator>Hugo</generator>
     <language>en-US</language>
     <copyright>Copyright © 2025, rksh.me</copyright>
     <lastBuildDate>Sat, 19 Jul 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/blog/azure-functions/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>End-to-End Tracking in Azure Functions</title>
       <link>http://localhost:1313/end-to-end-tracking-in-azure-functions/</link>
