@@ -12,7 +12,7 @@ In 2017, I took my skills into the professional world, growing into specialized 
 
 #### My Key Skills \& Experience
 
-- **Azure Integration Services:** Expert in Logic Apps, Service Bus, API Management, Azure Functions, and Event Grid for building scalable cloud solutions.
+- **Azure Integration Services:** Expert in Azure Functions, Service Bus, API Management, Logic Apps, and  storage etc. for building scalable cloud solutions.
 - **.NET Development:** Advanced proficiency in C\#, .Net Core, designing and maintaining enterprise-grade applications.
 - **BizTalk Server:** Extensive experience in building, managing, optimizing, and modernizing B2B integration solutions.
 - **BizTalk-to-Azure Migration:** Proven track record migrating complex BizTalk workflows to Azure Integration Services, increasing scalability and reducing operational costs.
