@@ -6,7 +6,7 @@ weight = 1
 
 Hi there! 👋
 
-I’m **Rakesh Gautam**, a passionate software developer from India. My journey with programming began in school—since around 2008, I explored coding as a hobby, diving into projects, learning independently, and building my foundational skills while still a student. This early exposure sparked a lifelong curiosity about technology and software development.
+I’m **Rakesh Gautam**, a passionate software developer from India. My journey with programming began in school, where I explored coding as a hobby—diving into projects, learning independently, and building my foundational skills while still a student. This early exposure sparked a lifelong curiosity about technology and software development.
 
 In 2017, I took my skills into the professional world, growing into specialized roles focused on Microsoft technologies and cloud-based integration solutions. This blend of longstanding passion and enterprise experience uniquely positions me as a dynamic problem solver and innovator.
 
