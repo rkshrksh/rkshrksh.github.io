@@ -1,7 +1,7 @@
 # Basic config
 baseURL = "https://rksh.me"
 theme = "hugo-bearcub"
-copyright = "Copyright © 2025"
+copyright = "© 2026"
 defaultContentLanguage = "en"
 
 # Generate a nice robots.txt for SEO
@@ -78,4 +78,4 @@ enableRobotsTXT = true
   # link by using a `hideReply` param in front matter.
   [params.author]
     name = "Rakesh Gautam" # Your name as shown in the RSS feed metadata
-    email = "hi@rksh.me" # Added to the footer so readers can reply to posts
+    email = "contact@rksh.me" # Added to the footer so readers can reply to posts
