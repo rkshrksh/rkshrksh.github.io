@@ -1,0 +1,46 @@
+{{ define "main" }}
+<main>
+  <h1>{{ .Title }}</h1>
+  
+  {{ with .Params.description }}
+  <p class="app-description">{{ . }}</p>
+  {{ end }}
+
+  {{ with .Params.links }}
+  <ul class="app-links">
+    {{ range . }}
+    <li><a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .name }}</a></li>
+    {{ end }}
+  </ul>
+  {{ end }}
+
+  <div class="app-content">
+    {{ .Content }}
+  </div>
+</main>
+{{ end }}
+
+{{ define "styles" }}
+<style>
+.app-description {
+  font-size: 1.1rem;
+  color: var(--text-color, #666);
+  margin-bottom: 1.5rem;
+}
+
+.app-links {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.app-links li {
+  margin-bottom: 0.5rem;
+}
+
+.app-content {
+  margin: 2rem 0;
+  line-height: 1.7;
+}
+</style>
+{{ end }}

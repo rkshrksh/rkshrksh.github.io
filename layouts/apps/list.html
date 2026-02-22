@@ -1,0 +1,15 @@
+{{ define "main" }}
+<main>
+  {{ .Content }}
+
+  <ul>
+    {{ range where .Pages "Params.hidden" "!=" true }}
+    <li>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </li>
+    {{ else }}
+    <li>No apps yet.</li>
+    {{ end }}
+  </ul>
+</main>
+{{ end }}
