@@ -3,8 +3,6 @@ title = "Privacy Policy"
 description = "Privacy Policy for Creditum"
 +++
 
-# Privacy Policy
-
 **Last updated:** February 2026
 
 ## Data Collection
