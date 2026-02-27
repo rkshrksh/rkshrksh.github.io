@@ -1,10 +1,9 @@
 +++
 title = "Creditum - Track what you're owed"
 description = "Creditum helps you track money borrowed or lent between friends and family. Easily record who owes you, what you owe others, and settle debts with a tap."
-hidden = true
+hidden = false
 links = [
-  { name = "App Store", url = "https://rksh.me" },
-  { name = "Google Play", url = "https://rksh.me" }
+  { name = "Google Play", url = "https://play.google.com/store/apps/details?id=me.rksh.creditum" }
 ]
 +++
 
