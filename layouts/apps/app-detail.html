@@ -20,7 +20,8 @@
 
   {{ $pages := .RegularPages }}
   {{ if $pages }}
-  <h2>Legal</h2>
+  <hr style="margin: 2rem 0; border: none; border-top: 1px solid var(--border-color);" />
+  <h2>Resources</h2>
   <ul>
     {{ range $pages }}
     <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
