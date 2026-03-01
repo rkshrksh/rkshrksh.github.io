@@ -1,0 +1,7 @@
+<a class="app-card" href="{{ .RelPermalink }}">
+    <h3 class="app-card__title">{{ .Title }}</h3>
+    {{ with .Params.description }}
+    <p class="app-card__desc">{{ . }}</p>
+    {{ end }}
+    <span class="app-card__arrow">→</span>
+</a>
