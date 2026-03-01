@@ -2,5 +2,6 @@
 {{ range .Site.Menus.main.ByWeight }}
 {{ $menuURL := .URL }}
 {{ $isActive := cond (eq $menuURL "/") (eq $currentURL "/") (hasPrefix $currentURL $menuURL) }}
+{{ if and (eq $menuURL "/blog/") (hasPrefix $currentURL "/tags/") }}{{ $isActive = true }}{{ end }}
 <a href="{{ .URL }}" {{ if $isActive }} class="active" {{ end }}>{{ .Name }}</a>
 {{ end }}
