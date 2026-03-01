@@ -3,12 +3,45 @@
     {{ $parts := split .RawContent "<!--more-->" }}
     <div class="content home-intro">
         {{ index $parts 0 | .RenderString }}
+
+        <div class="home-actions">
+            <a href="/about/" class="btn-primary">More About Me <span style="margin-left:5px">→</span></a>
+            <a href="https://linkedin.com/in/rksh" target="_blank" rel="noopener" class="btn-secondary">LinkedIn</a>
+            <a href="mailto:contact@rksh.me" class="btn-secondary">Email</a>
+        </div>
     </div>
+
+    {{ $appsSection := .Site.GetPage "section" "apps" }}
+    {{ if $appsSection }}
+    {{ $visibleApps := where $appsSection.Pages "Params.hidden" "!=" true }}
+    {{ if $visibleApps }}
+    <section class="featured-apps">
+        <div class="section-header">
+            <h2>Featured Apps</h2>
+            <a href="/apps/" class="view-all">View all apps</a>
+        </div>
+        <div class="app-grid home-app-grid">
+            {{ range first 2 $visibleApps }}
+            <a class="app-card" href="{{ .RelPermalink }}">
+                <h3 class="app-card__title">{{ .Title }}</h3>
+                {{ with .Params.description }}
+                <p class="app-card__desc">{{ . }}</p>
+                {{ end }}
+                <span class="app-card__arrow">→</span>
+            </a>
+            {{ end }}
+        </div>
+    </section>
+    {{ end }}
+    {{ end }}
 
     {{ $posts := where .Site.RegularPages "Type" "blog" }}
     {{ if $posts }}
     <section class="recent-posts">
-        <h2>Recent Posts</h2>
+        <div class="section-header">
+            <h2>Recent Posts</h2>
+            <a href="/blog/" class="view-all">View all posts</a>
+        </div>
         <ul class="recent-posts__list">
             {{ range first 5 $posts }}
             <li class="recent-posts__item">

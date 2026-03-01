@@ -385,6 +385,88 @@ body::before {
   font-weight: 700;
 }
 
+.home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.content .btn-primary,
+.content .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: all 0.25s var(--ease-out);
+}
+
+.content .btn-primary {
+  color: var(--bg-primary) !important;
+  background: linear-gradient(135deg, var(--accent), #a78bfa);
+  border: 1px solid transparent;
+}
+
+.content .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--accent-glow);
+}
+
+.content .btn-secondary {
+  color: var(--text-primary) !important;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+}
+
+.content .btn-secondary:hover {
+  background: var(--bg-card-hover);
+  border-color: rgba(129, 140, 248, 0.2);
+  transform: translateY(-2px);
+}
+
+/* ---------- Sections (Apps & Posts) ---------- */
+.featured-apps {
+  margin-top: 3.5rem;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.section-header h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.section-header .view-all {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s var(--ease-out);
+}
+
+.section-header .view-all:hover {
+  color: var(--accent);
+}
+
+.home-app-grid {
+  margin-top: 0;
+}
+
 /* ---------- Recent Posts ---------- */
 .recent-posts {
   margin-top: 3rem;
