@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    {{- partial "favicon.html" . -}}
+    <title>{{- block "title" . }}{{ with .Title }}{{ . }} — {{ end }}{{ .Site.Title }}{{- end }}</title>
+
+    {{- partial "seo_tags.html" . -}}
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+    {{ $mainCSS := resources.Get "css/main.css" | minify }}
+    <link href="{{ $mainCSS.RelPermalink }}" rel="stylesheet">
+
+    {{ $syntax := resources.Get "css/syntax.css" | minify }}
+    <link href="{{ $syntax.RelPermalink }}" rel="stylesheet">
+
+    {{ with .OutputFormats.Get "rss" -}}
+    {{ printf `
+    <link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+    {{ end -}}
+</head>
+
+<body>
+    <header class="site-header">
+        {{- partial "header.html" . -}}
+    </header>
+    <main id="main-content" class="site-main">
+        {{- block "main" . }}{{- end }}
+    </main>
+    <footer class="site-footer">
+        {{- partial "footer.html" . -}}
+    </footer>
+</body>
+
+</html>

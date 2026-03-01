@@ -1,0 +1,6 @@
+{{ $currentURL := .RelPermalink }}
+{{ range .Site.Menus.main.ByWeight }}
+{{ $menuURL := .URL }}
+{{ $isActive := cond (eq $menuURL "/") (eq $currentURL "/") (hasPrefix $currentURL $menuURL) }}
+<a href="{{ .URL }}" {{ if $isActive }} class="active" {{ end }}>{{ .Name }}</a>
+{{ end }}

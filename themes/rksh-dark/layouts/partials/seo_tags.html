@@ -1,0 +1,31 @@
+{{ with .Site.Params.description }}
+<meta name="description" content="{{ . }}">
+{{ end }}
+
+<!-- Open Graph -->
+<meta property="og:title" content="{{ .Title }}" />
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
+{{ with .Site.Params.description }}
+<meta property="og:description" content="{{ . }}" />
+{{ end }}
+{{ with .Site.Params.title }}
+<meta property="og:site_name" content="{{ . }}" />
+{{ end }}
+{{ range .Site.Params.images }}
+<meta property="og:image" content="{{ . | absURL }}" />
+{{ end }}
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary" />
+{{ with .Site.Params.social.twitter }}
+<meta name="twitter:site" content="@{{ . }}" />
+<meta name="twitter:creator" content="@{{ . }}" />
+{{ end }}
+<meta name="twitter:title" content="{{ .Title }}" />
+{{ with .Site.Params.description }}
+<meta name="twitter:description" content="{{ . }}" />
+{{ end }}
+{{ range .Site.Params.images }}
+<meta name="twitter:image" content="{{ . | absURL }}" />
+{{ end }}

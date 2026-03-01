@@ -1,0 +1,10 @@
+name = "rksh-dark"
+license = "MIT"
+licenselink = "https://github.com/rkshrksh/rkshrksh.github.io/blob/main/LICENSE"
+description = "A modern, minimal, dark-first Hugo theme for developer portfolios and blogs."
+tags = ["dark", "minimal", "portfolio", "blog", "responsive"]
+min_version = "0.121.0"
+
+[author]
+  name = "Rakesh Gautam"
+  homepage = "https://rksh.me"

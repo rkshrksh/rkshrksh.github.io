@@ -4,7 +4,7 @@ menu = "main"
 weight = 1
 +++
 
-Hi, I'm Rakesh.
+Hi, I'm **Rakesh**.
 
 **Azure Integration Specialist** — APIs, Event-Driven Messaging, System Integration
 
