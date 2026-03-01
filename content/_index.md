@@ -6,9 +6,9 @@ weight = 1
 
 Hi, I'm **Rakesh**.
 
-**Azure Integration Specialist** — APIs, Event-Driven Messaging, System Integration
+I'm an **Azure Integration Specialist** and Technical Lead.
 
-Technical Lead & Developer with 8+ years building enterprise integration solutions with Microsoft Azure and .NET. Track record of large-scale BizTalk-to-Azure migrations and delivering scalable, cost-efficient systems.
+I build scalable, event-driven architectures that bridge the gap between legacy systems and the modern cloud. With 8+ years of experience across Azure and .NET, I specialize in transforming complex integrations into resilient, cost-efficient solutions while leveraging **Generative AI, LLMs, and agentic tools (like Copilot and OpenCode)** to accelerate delivery.
 
 <!--more-->
 

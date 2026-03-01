@@ -442,13 +442,26 @@ body::before {
   border-bottom: 1px solid var(--border-subtle);
 }
 
-.section-header h2 {
+.section-header h2,
+.content h4,
+.app-content h2 {
   font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--text-primary);
   margin: 0;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.section-header h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
 }
 
 .section-header .view-all {
@@ -470,15 +483,6 @@ body::before {
 /* ---------- Recent Posts ---------- */
 .recent-posts {
   margin-top: 3rem;
-}
-
-.recent-posts h2 {
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--text-muted);
-  margin-bottom: 1rem;
 }
 
 .recent-posts__list {
