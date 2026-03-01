@@ -369,7 +369,8 @@ body::before {
   animation: fadeInUp 0.5s var(--ease-out) both;
 }
 
-.home-content .content>p:first-child {
+.home-content .content>p:first-child,
+.page-intro .content>p:first-child {
   font-size: 1.5rem;
   font-weight: 300;
   color: var(--text-primary);
@@ -377,7 +378,8 @@ body::before {
   letter-spacing: -0.01em;
 }
 
-.home-content .content>p:first-child strong {
+.home-content .content>p:first-child strong,
+.page-intro .content>p:first-child strong {
   background: linear-gradient(135deg, var(--accent) 0%, #c084fc 100%);
   -webkit-background-clip: text;
   background-clip: text;

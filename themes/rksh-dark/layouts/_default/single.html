@@ -11,9 +11,12 @@
     </p>
 </header>
 {{ end }}
-<div class="content">
-    {{ .Content }}
-</div>
+{{ if .Params.menu }}<div class="page-intro">{{ end }}
+    <div class="content">
+        {{ .Content }}
+    </div>
+    {{ if .Params.menu }}
+</div>{{ end }}
 {{ with (.GetTerms "tags") }}
 <div class="post-tags">
     {{ range . }}
