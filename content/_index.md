@@ -10,6 +10,8 @@ Hi, I'm **Rakesh**.
 
 Technical Lead & Developer with 8+ years building enterprise integration solutions with Microsoft Azure and .NET. Track record of large-scale BizTalk-to-Azure migrations and delivering scalable, cost-efficient systems.
 
+<!--more-->
+
 #### Technical Stack
 
 **Cloud & Integration**
