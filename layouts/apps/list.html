@@ -1,15 +1,20 @@
 {{ define "main" }}
-<main>
+<div class="content">
+  <h1>{{ .Title }}</h1>
   {{ .Content }}
 
-  <ul>
+  <div class="app-grid">
     {{ range where .Pages "Params.hidden" "!=" true }}
-    <li>
-      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-    </li>
+    <a class="app-card" href="{{ .RelPermalink }}">
+      <h3 class="app-card__title">{{ .Title }}</h3>
+      {{ with .Params.description }}
+      <p class="app-card__desc">{{ . }}</p>
+      {{ end }}
+      <span class="app-card__arrow">→</span>
+    </a>
     {{ else }}
-    <li>No apps yet.</li>
+    <p>No apps yet.</p>
     {{ end }}
-  </ul>
-</main>
+  </div>
+</div>
 {{ end }}
