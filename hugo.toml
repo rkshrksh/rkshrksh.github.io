@@ -32,6 +32,7 @@ enableRobotsTXT = true
   [params.social]
     twitter = "rksh_gautam"
     linkedin = "rksh"
+    github = "rkshrksh"
 
   [params.author]
     name = "Rakesh Gautam"

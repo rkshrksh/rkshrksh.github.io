@@ -46,8 +46,6 @@ Enterprise integration solutions that bridge legacy and modern systems. API gate
 - Microsoft Azure Fundamentals (AZ-900)
 - Google Generative AI Leader
 
-#### Contact
-
-[contact@rksh.me](mailto:contact@rksh.me) | [LinkedIn](http://linkedin.com/in/rksh)
+#### Get in Touch
 
 Open to senior integration roles and consulting.

@@ -16,6 +16,12 @@
         {{ .Content }}
     </div>
     {{ if .Params.menu }}
+    <div class="about-cta">
+        <a href="mailto:{{ .Site.Params.author.email }}" class="btn-primary">Get in Touch <span
+                style="margin-left:5px">→</span></a>
+    </div>
+    {{ partial "social-links.html" (dict "showEmail" false "style" "inline") }}
+</div>
 </div>{{ end }}
 {{ with (.GetTerms "tags") }}
 <div class="post-tags">
@@ -24,7 +30,7 @@
     {{ end }}
 </div>
 {{ end }}
-{{ if not .Params.hideReply }}
+{{ if and (not .Params.hideReply) (not .Params.menu) }}
 {{ with .Site.Params.author.email }}
 <div class="post-footer">
     <a href='mailto:{{ . }}?subject={{ i18n "email-subject" }}"{{ default $.Site.Title $.Page.Title }}"'>

@@ -1,8 +1,4 @@
 <small>
-    <span>{{ .Site.Copyright }}</span>
-    {{ with .Site.Params.social.twitter }}<span>· <a href="https://x.com/{{ . }}" target="_blank"
-            rel="noopener">Twitter</a></span>{{ end }}
-    {{ with .Site.Params.social.linkedin }}<span>· <a href="https://linkedin.com/in/{{ . }}" target="_blank"
-            rel="noopener">LinkedIn</a></span>{{ end }}
-    {{ with .Site.Params.author.email }}<span>· <a href="mailto:{{ . }}">Email</a></span>{{ end }}
+        <span>{{ .Site.Copyright }}</span>
+        {{ partial "social-links.html" (dict "showEmail" true "style" "footer") }}
 </small>

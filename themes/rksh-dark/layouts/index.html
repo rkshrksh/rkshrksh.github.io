@@ -6,9 +6,8 @@
 
         <div class="home-actions">
             <a href="/about/" class="btn-primary">More About Me <span style="margin-left:5px">→</span></a>
-            <a href="https://linkedin.com/in/rksh" target="_blank" rel="noopener" class="btn-secondary">LinkedIn</a>
-            <a href="mailto:contact@rksh.me" class="btn-secondary">Email</a>
         </div>
+        {{ partial "social-links.html" (dict "showEmail" true "style" "inline") }}
     </div>
 
     {{ $appsSection := .Site.GetPage "section" "apps" }}
