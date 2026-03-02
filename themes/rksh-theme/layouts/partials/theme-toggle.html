@@ -27,5 +27,17 @@
 
             localStorage.setItem('theme', newTheme);
         });
+
+        // Listen for OS system theme changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            // Only auto-switch if the user hasn't explicitly set a preference
+            if (!localStorage.getItem('theme')) {
+                if (e.matches) {
+                    document.documentElement.removeAttribute('data-theme'); // default is dark
+                } else {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                }
+            }
+        });
     });
 </script>
