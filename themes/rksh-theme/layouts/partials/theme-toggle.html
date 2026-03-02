@@ -2,10 +2,12 @@
     // Add this script in the <head> to prevent FOUC (Flash of Unstyled Content)
     (function () {
         const savedTheme = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        // Check explicitly for light preference so if `matchMedia` isn't supported, 
+        // it safely falls back to the default dark theme.
+        const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
 
         // Default to dark, but switch to light if explicitly saved or if OS prefers light (and no save)
-        if (savedTheme === 'light' || (!savedTheme && !prefersDark)) {
+        if (savedTheme === 'light' || (!savedTheme && prefersLight)) {
             document.documentElement.setAttribute('data-theme', 'light');
         }
     })();
@@ -33,9 +35,20 @@
             // Only auto-switch if the user hasn't explicitly set a preference
             if (!localStorage.getItem('theme')) {
                 if (e.matches) {
-                    document.documentElement.removeAttribute('data-theme'); // default is dark
+                    document.documentElement.removeAttribute('data-theme');
                 } else {
                     document.documentElement.setAttribute('data-theme', 'light');
+                }
+            }
+        });
+
+        // Sync theme across multiple tabs
+        window.addEventListener('storage', e => {
+            if (e.key === 'theme') {
+                if (e.newValue === 'light') {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                } else {
+                    document.documentElement.removeAttribute('data-theme');
                 }
             }
         });
