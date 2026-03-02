@@ -1,6 +1,6 @@
 # Basic config
 baseURL = "https://rksh.me"
-theme = "rksh-dark"
+theme = "rksh-theme"
 copyright = "© 2026"
 defaultContentLanguage = "en"
 

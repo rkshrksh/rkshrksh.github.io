@@ -39,6 +39,29 @@
   --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
 }
 
+/* ---------- Light Theme Overrides ---------- */
+[data-theme="light"] {
+  /* Background layers */
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f8fafc;
+
+  /* Text */
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+
+  /* Accents */
+  --accent: #6366f1;
+  --accent-hover: #4f46e5;
+  --accent-glow: rgba(99, 102, 241, 0.15);
+
+  /* Borders */
+  --border-subtle: rgba(0, 0, 0, 0.06);
+  --border-card: rgba(0, 0, 0, 0.08);
+}
+
 /* ---------- Reset & Base ---------- */
 *,
 *::before,
@@ -177,7 +200,48 @@ body::before {
 
 .site-nav a.active {
   color: var(--accent);
-  background: var(--accent-glow);
+  background: var(--bg-card);
+}
+
+#theme-toggle {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s var(--ease-out);
+  margin-left: 0.5rem;
+}
+
+#theme-toggle:hover {
+  color: var(--accent);
+  background: var(--bg-card);
+}
+
+#theme-toggle svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Hide sun icon in dark mode (default), hide moon in light mode */
+[data-theme="light"] .theme-icon-moon {
+  display: none;
+}
+
+[data-theme="light"] .theme-icon-sun {
+  display: block;
+}
+
+:root:not([data-theme="light"]) .theme-icon-moon {
+  display: block;
+}
+
+:root:not([data-theme="light"]) .theme-icon-sun {
+  display: none;
 }
 
 /* ---------- Content Typography ---------- */
