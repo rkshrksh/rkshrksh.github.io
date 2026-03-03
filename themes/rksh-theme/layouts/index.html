@@ -1,0 +1,57 @@
+{{ define "main" }}
+<div class="home-content">
+    {{ $parts := split .RawContent "<!--more-->" }}
+    <div class="content home-intro">
+        {{ index $parts 0 | .RenderString }}
+
+        <div class="home-actions">
+            <a href="/about/" class="btn-primary">More About Me <span style="margin-left:5px">→</span></a>
+        </div>
+        {{ partial "social-links.html" (dict "showEmail" true "style" "inline") }}
+    </div>
+
+    {{ $appsSection := .Site.GetPage "section" "apps" }}
+    {{ if $appsSection }}
+    {{ $visibleApps := where $appsSection.Pages "Params.hidden" "!=" true }}
+    {{ if $visibleApps }}
+    <section class="featured-apps">
+        <div class="section-header">
+            <h2>Featured Apps</h2>
+            <a href="/apps/" class="view-all">View all apps</a>
+        </div>
+        <div class="app-grid home-app-grid">
+            {{ range first 2 $visibleApps }}
+            {{ partial "app-card.html" . }}
+            {{ end }}
+        </div>
+    </section>
+    {{ end }}
+    {{ end }}
+
+    {{ $posts := where .Site.RegularPages "Type" "blog" }}
+    {{ if $posts }}
+    <section class="recent-posts">
+        <div class="section-header">
+            <h2>Recent Posts</h2>
+            <a href="/blog/" class="view-all">View all posts</a>
+        </div>
+        <ul class="recent-posts__list">
+            {{ range first 5 $posts }}
+            <li class="recent-posts__item">
+                <time class="recent-posts__date" datetime='{{ .Date.Format "2006-01-02" }}'>
+                    {{ .Date.Format (default "Jan 02, 2006" .Site.Params.dateFormat) }}
+                </time>
+                <a class="recent-posts__link" href="{{ .Permalink }}">{{ .Title }}</a>
+            </li>
+            {{ end }}
+        </ul>
+    </section>
+    {{ end }}
+
+    {{ if gt (len $parts) 1 }}
+    <div class="content home-details">
+        {{ index $parts 1 | .RenderString }}
+    </div>
+    {{ end }}
+</div>
+{{ end }}

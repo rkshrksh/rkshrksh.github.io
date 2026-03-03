@@ -1,0 +1,14 @@
+{{ define "main" }}
+<div class="content">
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+
+  <div class="app-grid">
+    {{ range where .Pages "Params.hidden" "!=" true }}
+    {{ partial "app-card.html" . }}
+    {{ else }}
+    <p>No apps yet.</p>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

@@ -1,0 +1,33 @@
+{{- $showEmail := default true .showEmail -}}
+{{- $style := default "inline" .style -}}
+{{- $links := slice -}}
+
+{{- with site.Params.social.twitter -}}
+{{- $links = $links | append (dict "name" "Twitter" "url" (printf "https://x.com/%s" .)) -}}
+{{- end -}}
+{{- with site.Params.social.linkedin -}}
+{{- $links = $links | append (dict "name" "LinkedIn" "url" (printf "https://linkedin.com/in/%s" .)) -}}
+{{- end -}}
+{{- with site.Params.social.github -}}
+{{- $links = $links | append (dict "name" "GitHub" "url" (printf "https://github.com/%s" .)) -}}
+{{- end -}}
+{{- if $showEmail -}}
+{{- with site.Params.author.email -}}
+{{- $links = $links | append (dict "name" "Email" "url" (printf "mailto:%s" .)) -}}
+{{- end -}}
+{{- end -}}
+
+{{- if eq $style "footer" -}}
+{{- range $links -}}
+<span>· <a href="{{ .url }}" {{ if not (hasPrefix .url "mailto:" ) }}target="_blank" rel="noopener" {{ end }}>{{ .name
+        }}</a></span>
+{{- end -}}
+{{- else -}}
+<div class="home-social-links">
+    {{- range $i, $link := $links -}}
+    {{- if $i }}<span class="separator">·</span>{{ end -}}
+    <a href="{{ $link.url }}" {{ if not (hasPrefix $link.url "mailto:" ) }}target="_blank" rel="noopener" {{ end }}>{{
+        $link.name }}</a>
+    {{- end -}}
+</div>
+{{- end -}}

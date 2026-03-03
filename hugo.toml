@@ -1,0 +1,36 @@
+# Basic config
+baseURL = "https://rksh.me"
+title = "rksh"
+theme = "rksh-theme"
+copyright = "rksh.me © 2026"
+defaultContentLanguage = "en"
+
+# Generate a nice robots.txt for SEO
+enableRobotsTXT = true
+
+# Syntax highlighting
+[markup]
+  [markup.highlight]
+    lineNos = true
+    lineNumbersInTable = false
+    noClasses = false
+
+# Language config
+[languages]
+  [languages.en]
+    LanguageCode = "en-US"
+
+[params]
+  description = "Rakesh Gautam's Dev Blog and resume"
+  favicon = "images/favicon.png"
+  images = ["images/share.jpg"]
+  dateFormat = "2006-01-02"
+
+  [params.social]
+    twitter = "rksh_gautam"
+    linkedin = "rksh"
+    github = "rkshrksh"
+
+  [params.author]
+    name = "Rakesh Gautam"
+    email = "contact@rksh.me"

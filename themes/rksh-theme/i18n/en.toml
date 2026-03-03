@@ -1,0 +1,14 @@
+[skip-link]
+other = "Skip to main content"
+
+[email-reply]
+other = "Reply to this post by email"
+
+[email-subject]
+other = "Re: "
+
+[no-posts]
+other = "No posts yet."
+
+[filtering-for]
+other = "Filtering for"
